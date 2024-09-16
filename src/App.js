@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Analytics from './Components/Analytics';
+import Curate from './Components/Curate';
+import Dashboard from './Components/Dashboard';
+import LogIn from './Components/LogIn';
+import Settings from './Components/Settings';
+import SignUp from './Components/SignUp';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div  >
+      <Router>
+        <Routes>          
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/settings" element={<Settings />} /> 
+          <Route path="/curate" element={<Curate />} />
+          <Route path="/analytics" element={<Analytics />} />            
+        </Routes>
+      </Router>
     </div>
   );
 }

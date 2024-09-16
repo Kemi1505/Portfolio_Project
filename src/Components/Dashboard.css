@@ -1,0 +1,135 @@
+.sidebar {
+    height: 100vh;
+    width: 150px;
+    background-color: #4B1E6A;
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    position: absolute;
+    left: 0;
+    gap: 22px;
+    font-size: 19px;
+    
+}
+.sidebar .menu{
+    color: black;
+    text-decoration: none;
+}
+
+.containe {
+    display: flex;
+    max-height: 100vh;
+    padding-left: 5px;   
+
+}
+.main-content {
+    flex: 1;
+    padding: 20px;
+
+}
+.heade {
+    color: black;
+}
+.heade h1 {
+    padding-left: 100px;
+    margin: 0;
+    font-size: 2em;
+}
+.heade .date {
+    padding-left: 500px;
+    margin: 0;
+    font-size: 1.5em;
+}
+.heade p{
+    padding-left: 100px;
+    margin: 0;
+    font-size: 1.5em;
+
+}
+.streaks {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    text-align: right;
+    color: black;
+}
+.streaks h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+.streaks .number {
+    margin: 0;
+    font-size: 1.5em;
+}
+.content {
+    display: flex;
+    padding-left: 55px;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+    
+}
+.box {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 20px;
+    width: 550px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 40px;
+    
+
+}
+.box h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+.box p {
+    margin: 10px 0;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.input-group span {
+    background-color: #D3D3D3;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+.input-group input {
+    background-color: #D3D3D3;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+.expenses-list {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;  
+
+}
+.expenses-list .transaction {
+    background-color: #E0E0E0;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+
+}
+.curate-plan {
+    display: flex;
+    justify-content: center;
+    text-decoration: solid;
+}
+.curate-plan button {
+    background-color: #F8F8F8;
+    border: 1px solid #A9A9A9;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
