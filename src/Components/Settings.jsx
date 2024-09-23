@@ -5,33 +5,33 @@ import './Settings.css'
 const Settings = () => {
   return (
     <div className='container'>
-       <div class="header">
+       <div className="header">
          <h2>Settings</h2>
          </div>
-         <div class="section">
-    <div class="section-title">
+         <div className="section">
+    <div className="section-title">
      Account
     </div>
-    <div class="item">
+    <div className="item">
         <div>Edit Profile</div>
     </div>
-    <div class="item">
+    <div className="item">
         <div>Full Name</div>
     </div>
-    <div class="item">
+    <div className="item">
         <div>Email</div>
     </div>
-    <div class="item">
+    <div className="item">
         <div>Currency</div>
     </div>
-    <div class="item">
+    <div className="item">
         <div>Change Password</div>
     </div>
-    <div class="item">
+    <div className="item">
         <div>Forgot Password</div>
     </div>
     </div>
-    <button class="logout-button">
+    <button className="logout-button">
     Log Out
    </button>
         

@@ -35,7 +35,7 @@ const LogIn = () => {
        </div>
        <Link to="/dashboard" className="submit">Sign In</Link>
 
-       <div class="signin-link">Don't have an account?  <Link to="/signup" className="Log In">Sign Up</Link></div>
+       <div className="signin-link">Don't have an account?  <Link to="/signup" className="Log In">Sign Up</Link></div>
     </div>
   );
 };
