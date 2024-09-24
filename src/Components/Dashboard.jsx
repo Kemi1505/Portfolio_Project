@@ -10,14 +10,17 @@ import {TransactionContext} from "../contexts/DashContext";
 
 
 const Dashboard = () => {
+  // Get the list, income, and results from the TransactionContext
   const {list, setList, Income, setIncome, results } = useContext(TransactionContext); 
+  // Get the values of the results object
   const resultValues = Object.values(results);
+  // Initialize state for new transactions
   const [newAddTransaction, setNewAddTransaction] = useState('');
   const [newSubtractTransaction, setNewSubtractTransaction] = useState('');
 
   const handleAddTransaction = () => {
-    if (newAddTransaction.trim() !== '') {
-      setList((prevList) => ({
+    if (newAddTransaction.trim() !== '') { // Check if the new transaction is not empty
+      setList((prevList) => ({ // Update the list by adding the new transaction
         items: [...prevList.items,
           { id: prevList.items.length + 1, name: newAddTransaction },
         ],
@@ -26,8 +29,10 @@ const Dashboard = () => {
     }
   };
   
+  
   const handleSubtractTransaction = () => {
-    setList((prevList) => ({
+    setList((prevList) => ({ // Update the list by removing the transaction
+      // Making it case insensitive
       items: prevList.items.filter((item) => item.name.toLowerCase() !== newSubtractTransaction.toLowerCase()),
     }));
     setNewSubtractTransaction(''); // Reset input field
@@ -35,7 +40,7 @@ const Dashboard = () => {
 
 
   const handleIncomeChange = (e) => {
-    setIncome(e.target.value);
+    setIncome(e.target.value);// Update the income state
   };
 
 
@@ -97,6 +102,7 @@ const Dashboard = () => {
 };
 
 const Transaction = ({ item, resultValues, idx }) => {
+  // Initialize state for the transaction
   const [inputValue, setInputValue] = useState('');
   const [totalValue, setTotalValue] = useState(0);
   const [showInput, setShowInput] = useState(false);
@@ -104,11 +110,13 @@ const Transaction = ({ item, resultValues, idx }) => {
 
   const handleTap = () => {
     setShowInput(true);
+    //ser showinput to false when called
   };
 
   const handleInputChange = (e) => {
     const numericValue = e.target.value.replace(/[^0-9.]/g, '');
     setInputValue(numericValue);
+    //only accepts numbers
   };
 
   const handleInputKeyPress = (e) => {
@@ -150,7 +158,7 @@ const Transaction = ({ item, resultValues, idx }) => {
     <div key={item.id} className="transaction">
       <div onClick={handleTap}>
         {item.name} <span style={{ marginLeft: 10 }}>{totalValue}</span>
-        <button onClick={handleReset}>Reset</button>
+        <button  onClick={handleReset} >Reset</button>
       </div>
       {showInput && (
         <input

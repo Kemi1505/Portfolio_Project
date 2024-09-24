@@ -4,35 +4,43 @@ import { Link } from "react-router-dom";
 import {TransactionContext} from "../contexts/DashContext";
 
 function Curate() {
+  // Get the list and income from the TransactionContext
   const { list, Income, setResults} = useContext(TransactionContext);
 
+  // Initialize state for input values, total, and error
   const [inputValues, setInputValues] = useState({}); 
   const [total, setTotal] = useState(0);
   const [error, setError] = useState(null);
 
   const calculatePercentage = () => {
+    // Calculate the percentage for each item in the list
     const results = Object.keys(inputValues).map((id) => {
       const inputValue = inputValues[id];
       const result = (inputValue * Income) / 100;
       return { id, result };
     });
+    // Set the results in the TransactionContext
     setResults(results);
   };
 
 
 
   const handleCurate = () => {
-    if (total > 100) {
+    if (total > 100) { // Check if the total exceeds 100%
+      // Return a disabled button if the total exceeds 100%
       return <button disabled>Curate a Plan</button>;
     } else {
+      // Return a link to the dashboard with a button to curate a plan
       return <Link to="/dashboard"><button onClick={calculatePercentage}>Curate a Plan</button></Link>;
     }
   };
   const calculateTotal = () => {
+    // Calculate the total percentage
     const totalValue = list.reduce((acc, curr) => {
       const inputValue = curr.inputValue ? parseInt(curr.inputValue, 10) : 0;
       return acc + inputValue;
     }, 0);
+    // Set the total state
     setTotal(totalValue);
     if (totalValue > 100) {
       setError('Total percentage exceeds 100%'); // Set the error message if total exceeds 100%

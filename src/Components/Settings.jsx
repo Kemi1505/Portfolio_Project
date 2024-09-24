@@ -1,6 +1,6 @@
 import React from 'react';
 import './Settings.css'
-
+import { Link } from "react-router-dom";
 
 const Settings = () => {
   return (
@@ -31,9 +31,8 @@ const Settings = () => {
         <div>Forgot Password</div>
     </div>
     </div>
-    <button className="logout-button">
-    Log Out
-   </button>
+    
+   <Link to="/login" className="logout-button"><button>Log Out</button></Link>
         
     </div>
   );
