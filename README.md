@@ -14,6 +14,9 @@ Responsive and user-friendly design
 
 https://budgetapp-iota.vercel.app/signup
 
+## LikendIn Post
+https://www.linkedin.com/pulse/introducing-wiselya-budget-tracker-oluwakemi-kuteyi-jkimf
+
 ### Installation
 
 To get a local copy up and running, follow these steps:
